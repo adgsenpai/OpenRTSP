@@ -1,6 +1,10 @@
 #ADGSTUDIOS - server.py
 
-from flask import Flask,render_template,send_from_directory
+from flask import Flask, render_template, Response
+import openrtsp
+import cv2
+
+camera = cv2.VideoCapture('rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4')
 
 app = Flask(__name__,template_folder='./pages')
 
@@ -11,6 +15,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def home():
   return render_template('index.html')
 
-#running server on port 5000 - you can change the values here
+@app.route('/video_feed')
+def video_feed():
+    return Response(openrtsp.gen_frames(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
+
 if __name__ == "__main__":
   app.run(host="0.0.0.0",port=5000)
