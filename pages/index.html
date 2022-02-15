@@ -32,17 +32,26 @@
             </div>
 
             <div class="card-body pt-2">
-                <span style="background-image: linear-gradient(310deg, #251acb, #4510e9);" class="text-gradient text-primary text-lg font-weight-bold my-2">OpenRTSP</span>
+                <span style="background-image: linear-gradient(310deg, #251acb, #4510e9);" class="text-gradient text-primary text-lg font-weight-bold my-2">Welcome to OpenRTSP</span>  
                 <br>
                 <br>
                 <br>
-                
+                <h5>a developer's platform to view any camera stream in HTML5 or a users platform to manage their security cameras</h5>
+                <br>
+                <br>
                 <input list="cameras" onchange="changeCamera()" class="form-control" name="edtAddress" id="edtCameraIP">
                 <br>
                 <br>
+                <button type="button" onclick="changeCamera()" class="btn bg-gradient-info">Change Camera</button>
                 <br>
-                <img id="cameraA" style="height:500px" class="img-fluid" src="./video_feed">
-                
+                <br>
+                <button type="button" onclick="window.location.href='https://docs.openrtsp.com'" class="btn bg-gradient-danger">View Developer Documents</button>
+                <br>
+                <img id="cameraA" style=" width: 100%;
+                height: 500px;" class="img-fluid" src="./video_feed">
+                <br>
+                <br>
+              
             </div>
             <datalist id="cameras">
                 {% if cameras %}
@@ -54,6 +63,21 @@
         </div>
     </div>
     </div>
+    <footer class="footer py-5">
+        <div class="container">
+    
+          <div class="row">
+            <div class="col-8 mx-auto text-center mt-1">
+              <h5 class=" text-lg font-weight-bold my-2">
+                Copyright ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script> Made with ❤️ by <a style="color:blue" href="https://adgstudios.co.za">Ashlin Darius Govindasamy</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </footer>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/html5media/1.1.8/html5media.min.js'></script>
