@@ -1,3 +1,4 @@
 Flask
 opencv-python-headless
 gunicorn
+PyYAML
