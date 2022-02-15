@@ -15,10 +15,7 @@ app.config['SECRET_KEY'] = 'super secret key'
 
 @app.route('/')
 def home():
-  if 'username' in session:
-    return render_template('index.html',cameras=usercontroller.ReturnCameras())
-  else:
-    return render_template('sign-in.html')
+  return render_template('index.html',cameras=usercontroller.ReturnCameras())
 
 @app.route('/login')
 def login():
@@ -28,7 +25,6 @@ def login():
 def logout():
     session.clear()
     return render_template('sign-in.html')
-
 
 @app.route('/api/v1/login', methods=['POST'])
 def login_post():
