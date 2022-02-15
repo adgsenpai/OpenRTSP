@@ -1,0 +1,8 @@
+- accounts:
+  - usernames:
+    - adgsenpai
+  - passwords:
+    - 12345
+
+- ipcameras:
+  - rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4
