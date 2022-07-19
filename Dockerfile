@@ -12,4 +12,4 @@ RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python" , "server.py" ]
+ENTRYPOINT [ "python3" , "server.py" ]
